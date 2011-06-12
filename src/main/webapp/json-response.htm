@@ -1,0 +1,41 @@
+<html>
+<head></head>
+<body>
+This example shows how an ActionResult can return a
+<a href="http://www.json.org/" target="_blank" class="external">JSON</a> response.
+
+<p/>
+
+Click $link to call the server using Ajax.
+
+<div id="result">
+    <!-- Ajax response will be set here -->
+</div>
+
+
+<script type="text/javascript" src="$context/assets/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript">
+    // Register a function that is invoked as soon as the DOM is loaded
+    jQuery(document).ready(function() {
+
+        // Register a 'click' handler that makes an Ajax request
+        jQuery("#link-id").click(function(event){
+            // Make ajax request
+            makeRequest();
+            // Prevent the default browser behavior of navigating to the link
+            return false;
+        })
+    })
+
+    function makeRequest() {
+        var link = jQuery('#link-id');
+        var extraData = link.attr('id') + '=1';
+        var url = link.attr('href');
+        jQuery.get(url, extraData, function(data){
+            jQuery("#result").html("<p class='infoMsg'>" + data.msg + data.date + "</p>");
+            }, "json");
+    }
+</script>
+</body>
+</html>

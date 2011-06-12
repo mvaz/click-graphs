@@ -1,0 +1,14 @@
+.bar {
+  margin-left: 42px;
+  shape-rendering: crispEdges;
+}
+
+.bar rect {
+    stroke: white;
+    fill: steelblue;
+}
+
+.bar text {
+  fill: white;
+  font: 12px sans-serif;
+}

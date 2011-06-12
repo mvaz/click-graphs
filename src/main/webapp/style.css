@@ -1,0 +1,17 @@
+#title {
+	color: #756d75;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#header {
+	text-align: center;
+	margin-right: 20%;
+	margin-left: 20%;
+}
+
+#main {
+	margin-right: 20%;
+	margin-left: 20%;
+	border-style: none;
+	padding: 20px;
+}
