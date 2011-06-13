@@ -1,0 +1,34 @@
+<div id="bargraph">
+<script type="text/javascript">
+var data = $data
+w = 400,
+h = 200,
+margin = 20,
+x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w - margin]),
+y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - margin])
+
+var chart = d3.select("#bargraph")
+.append("svg:svg")
+.attr("class", "bar")
+.attr("width", w)
+.attr("height", h)
+
+chart.selectAll("rect")
+.data(data)
+.enter().append("svg:rect")
+.attr("x", function(d, i) { return x(i);})
+.attr("y", function(d) { return h - margin - y(d);})
+.attr("width", x(1) - x(0))
+.attr("height", y); //function(d,i) { return h + y(d); })
+
+
+chart.selectAll("text")
+  .data(data)
+.enter().append("svg:text")
+  .attr("x", function(d, i) { return x(i) + 0.5 * (x(i+1) - x(i));})
+  .attr("y", function(d) { return h - margin - y(d);})
+  .attr("dy", 15)
+  .attr("text-anchor", "end")
+  .text(String);    
+</script>
+</div>

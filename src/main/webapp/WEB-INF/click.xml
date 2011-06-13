@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <click-app>
 
-	<pages package="net.mvaz.vizplorer.page" />
+	<pages package="net.mvaz.vizplorer.page" automapping="true" autobinding="true">
+		<page path="barchart.htm" classname="net.mvaz.vizplorer.page.BarChartPage"/>
+		<page path="testmycontrol.htm" classname="net.mvaz.vizplorer.page.TestMyControlPage"/>  
+	</pages>
 	
 	<mode value="trace"/>
 
